@@ -1,14 +1,13 @@
 exports = (module.exports = {});
 const nodemailer = require('nodemailer');
 const Template = require('./templatesEmail/confirmationEmail/confirmOrder.js');
-exports.sendEmail = ({name, lastname, country, addressExt, addresInt,city,apartament,postalCode,phone,email,informationPlus,items,typeDatos,DNI,Nombre,RUC,RazonSocial})=> new Promise((resolve,reject)=>{
+exports.sendEmail = ({name, lastname, country, addressExt, addresInt,city,apartament,postalCode,phone,email,informationPlus,items,typeDatos,DNI,Nombre,RUC,RazonSocial,image})=> new Promise((resolve,reject)=>{
     let configuration = {
         host: "mail.fotoplus.pe",
         port: 587,
         auth: {
             user: "tienda@fotoplus.pe",
             pass: "elpolob121"
-            // pass: "4224579"
         },
         tls: {
             rejectUnauthorized: false
