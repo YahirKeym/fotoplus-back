@@ -15,7 +15,7 @@ exports.header = ()=> `
             <!-- container -->
             <table class="table1 editable-bg-color bg_color_303f9f" bgcolor="#FEE862" width="600" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
                 <!-- padding-top -->
-                <tr><td height="25"></td></tr>
+                <tr><td height="20"></td></tr>
                 <tr>
                     <td>
                         <!-- Inner container -->
@@ -154,12 +154,10 @@ exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',country = '
                     </multiline>
                     <p>El correo del cliente: ${Correo}</p>
                     <p>El Telefono del cliente: ${phone}</p>
-                    <p>El País del cliente: ${country}</p>
                     <p>Dirección del cliente: ${addresExt}</p>
                     <p> ${addresInt}</p>
-                    <p>Ciudad: ${city}</p>
+                    <p>Distrito: ${city}</p>
                     <p>Departamento: ${apartament}</p>
-                    <p>Código postal: ${postalCode}</p>
                     <p>Información extra: ${informationPlus}</p>
                     <p>Tipo de Comprobante: ${tipoDeDato}</p>
                     <p>DNI: ${DNI}</p>
@@ -199,25 +197,6 @@ let productName = (description)=>`
                 <span class="text_container">
                     <multiline>
                         ${description}
-                    </multiline>
-                </span>
-            </div>
-        </td>
-    </tr>
-`
-/**
- * 
- */
-let productInfo = (name,codigo,tipo,Capacidad)=>`
-    <tr>
-        <td mc:edit="text006" align="left" class="center_content text_color_b0b0b0" style="color: #b0b0b0; font-size: 14px;line-height: 2; font-weight: 300; font-family: lato, Helvetica, sans-serif; mso-line-height-rule: exactly;">
-            <div class="editable-text" style="line-height: 2;">
-                <span class="text_container">
-                    <multiline>
-                        Nombre del producto: ${name}
-                        Código del producto: ${codigo}
-                        Material del producto: ${tipo}
-                        Capacidad del producto: ${Capacidad} 
                     </multiline>
                 </span>
             </div>
