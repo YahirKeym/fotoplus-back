@@ -30,11 +30,9 @@ exports.header = ()=> `
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr><td height="22"></td></tr>
                                     </table>
                                 </td>
                             </tr>
-                            <tr><td height="60"></td></tr>
                             <tr>
                                 <td align="center">
                                     <div class="editable-img">
@@ -42,9 +40,6 @@ exports.header = ()=> `
                                     </div>
                                 </td>
                             </tr>
-
-                            <!-- horizontal gap -->
-                            <tr><td height="40"></td></tr>
 
                             <tr>
                                 <td mc:edit="text001" align="center" class="text_color_ffffff" style="color: #212121; font-size: 30px; font-weight: 700; font-family: lato, Helvetica, sans-serif; mso-line-height-rule: exactly;">
@@ -58,8 +53,6 @@ exports.header = ()=> `
                                 </td>
                             </tr>
 
-                            <!-- horizontal gap -->
-                            <tr><td height="30"></td></tr>
 
                             <tr>
                                 <td mc:edit="text002" align="center" class="text_color_ffffff" style="color: #212121	; font-size: 12px; font-weight: 300; font-family: lato, Helvetica, sans-serif; mso-line-height-rule: exactly;">
@@ -75,8 +68,6 @@ exports.header = ()=> `
                         </table>
                     </td>
                 </tr>
-                <!-- padding-bottom -->
-                <tr><td height="60"></td></tr>
             </table><!-- END container -->
         </td>
     </tr>
@@ -132,7 +123,7 @@ exports.userEmail = (Nombre = '',Apellidos = '')=>`
 /**
  * 
  */
-exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',country = '',addresExt = '',addresInt = '',city = '',apartament = '',postalCode = '',informationPlus = '',tipoDeDato='',DNI='',Nombre='',Ruc='',RazonSocial='')=>`
+exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',addresExt = '',addresInt = '',city = '',apartament = '',postalCode = '',informationPlus = '',tipoDeDato='',DNI='',Nombre='',Ruc='',RazonSocial='')=>`
     ${InitInformation}
     <tr>
         <td mc:edit="text003" align="left" class="center_content text_color_282828" style="color: #282828; font-size: 18px; font-weight: 700; font-family: lato, Helvetica, sans-serif; mso-line-height-rule: exactly;">
@@ -234,7 +225,7 @@ exports.product = ({name,price,quantity,image,Codigo,description} )=>`
         <td>
             <!-- column-1  -->
            <!-- END column-1 -->
-                ${productImage(image[0])}
+                ${productImage(image)}
             <!-- vertical gap -->
             <table class="tablet_hide" width="40" align="left" border="0" cellspacing="0" cellpadding="0">
                 <tr><td height="1"></td></tr>
