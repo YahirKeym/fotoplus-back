@@ -174,12 +174,12 @@ exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',country = '
 /**
  * 
  */
-let productImage = ()=>`
+let productImage = (image)=>`
     <table class="table1-2" width="125" align="left" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td align="center">
                 <a href="#" style="border-style: none !important; display: block; border: 0 !important;" class="editable-img">
-                    <img editable="true" mc:edit="image004" src="images/sq-icon-filled-box.png" style="display:block; line-height:0; font-size:0; border:0;" border="0" alt="" />
+                    <img editable="true" mc:edit="image004" src="https://fotoplus.pe${image}" style="width:100%;  display:block; line-height:0; font-size:0; border:0;" border="0" alt="" />
                 </a>
             </td>
         </tr>
@@ -229,12 +229,12 @@ let productData = {
 /**
  * 
  */
-exports.product = ({name,price,quantity,selectedProductSize,selectedProductColor,Codigo,description} )=>`
+exports.product = ({name,price,quantity,image,Codigo,description} )=>`
     <tr>
         <td>
             <!-- column-1  -->
            <!-- END column-1 -->
-                ${productImage()}
+                ${productImage(image[0])}
             <!-- vertical gap -->
             <table class="tablet_hide" width="40" align="left" border="0" cellspacing="0" cellpadding="0">
                 <tr><td height="1"></td></tr>
@@ -242,7 +242,7 @@ exports.product = ({name,price,quantity,selectedProductSize,selectedProductColor
 
             <!-- column-2  -->
             <table class="table1-2" width="355" align="left" border="0" cellspacing="0" cellpadding="0">
-                ${productName(description)}
+                ${productName(description ? description : name)}
                 <!-- horizontal gap -->
                 <tr><td height="5"></td></tr>
                 <!-- horizontal gap -->
