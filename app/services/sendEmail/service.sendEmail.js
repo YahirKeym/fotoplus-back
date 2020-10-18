@@ -1,7 +1,7 @@
 exports = (module.exports = {});
 const nodemailer = require('nodemailer');
 const Template = require('./templatesEmail/confirmationEmail/confirmOrder.js');
-exports.sendEmail = ({name, lastname, country, addressExt, addresInt,city,apartament,postalCode,phone,email,informationPlus,items,typeDatos,DNI,Nombre,RUC,RazonSocial,image})=> new Promise((resolve,reject)=>{
+exports.sendEmail = ({name, lastname, addressExt, addresInt,city,apartament,postalCode,phone,email,informationPlus,items,typeDatos,DNI,Nombre,RUC,RazonSocial,image})=> new Promise((resolve,reject)=>{
     let configuration = {
         host: "mail.fotoplus.pe",
         port: 587,
@@ -17,7 +17,7 @@ exports.sendEmail = ({name, lastname, country, addressExt, addresInt,city,aparta
     let Transporter = nodemailer.createTransport(configuration);
     let htmlForUser = Template.header();
     let htmlForAdmin = Template.header();
-    htmlForAdmin += Template.adminEmail(name, lastname,email,phone,country,addressExt,addresInt,city,apartament,postalCode,informationPlus,typeDatos,DNI,Nombre,RUC,RazonSocial);
+    htmlForAdmin += Template.adminEmail(name, lastname,email,phone,addressExt,addresInt,city,apartament,informationPlus,typeDatos,DNI,Nombre,RUC,RazonSocial);
     htmlForUser += Template.userEmail(name, lastname)
     let total = 0;
     for (let index = 0; index < items.length; index++) {

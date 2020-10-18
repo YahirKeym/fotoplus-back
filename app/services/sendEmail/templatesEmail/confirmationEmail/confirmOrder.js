@@ -123,7 +123,7 @@ exports.userEmail = (Nombre = '',Apellidos = '')=>`
 /**
  * 
  */
-exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',addresExt = '',addresInt = '',city = '',apartament = '',postalCode = '',informationPlus = '',tipoDeDato='',DNI='',Nombre='',Ruc='',RazonSocial='')=>`
+exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',addresExt = '',addresInt = '',city = '',apartament = '',informationPlus = '',tipoDeDato='',DNI='',Nombre='',Ruc='',RazonSocial='')=>`
     ${InitInformation}
     <tr>
         <td mc:edit="text003" align="left" class="center_content text_color_282828" style="color: #282828; font-size: 18px; font-weight: 700; font-family: lato, Helvetica, sans-serif; mso-line-height-rule: exactly;">
@@ -151,10 +151,10 @@ exports.adminEmail = (name = '',Apellidos = '',Correo ='',phone = '',addresExt =
                     <p>Departamento: ${apartament}</p>
                     <p>Información extra: ${informationPlus}</p>
                     <p>Tipo de Comprobante: ${tipoDeDato}</p>
-                    <p>DNI: ${DNI}</p>
+                    ${DNI.length !== 0 ? `<p>DNI: ${DNI}</p>` : ''}
                     <p>Nombre del comprador: ${Nombre}</p>
-                    <p>RUC: ${Ruc}</p>
-                    <p>Razón Social: ${RazonSocial}</p>
+                    ${Ruc.length !== 0 ? `<p>RUC: ${Ruc}</p>` : ''}
+                    ${RazonSocial.length !== 0 ? `<p>Razón Social: ${RazonSocial}</p>` : ''}
                 </span>
             </div>
         </td>
@@ -220,7 +220,7 @@ let productData = {
 /**
  * 
  */
-exports.product = ({name,price,quantity,image,Codigo,description} )=>`
+exports.product = ({name,price,quantity,image,Codigo,description,selectedProductColor} )=>`
     <tr>
         <td>
             <!-- column-1  -->
@@ -233,7 +233,7 @@ exports.product = ({name,price,quantity,image,Codigo,description} )=>`
 
             <!-- column-2  -->
             <table class="table1-2" width="355" align="left" border="0" cellspacing="0" cellpadding="0">
-                ${productName(description ? description : name)}
+                ${productName(description ? description : name)} : ${selectedProductColor}
                 <!-- horizontal gap -->
                 <tr><td height="5"></td></tr>
                 <!-- horizontal gap -->
