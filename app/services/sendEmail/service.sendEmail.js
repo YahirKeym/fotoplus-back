@@ -6,8 +6,8 @@ exports.sendEmail = ({name, lastname, addressExt, addresInt,city,apartament,post
         host: "mail.fotoplus.pe",
         port: 587,
         auth: {
-            user: "tienda@fotoplus.pe",
-            pass: "elpolob121"
+            user: "web@fotoplus.pe",
+            pass: "DTxlv_uU7,&@"
         },
         tls: {
             rejectUnauthorized: false
@@ -35,7 +35,7 @@ exports.sendEmail = ({name, lastname, addressExt, addresInt,city,apartament,post
     };
     let EmailOptionsAdm = {
         from: 'tienda@fotoplus.pe',
-        to: 'tienda@fotoplus.pe',
+        to: 'web@fotoplus.pe',
         subject: 'Pedido Nuevo!',
         html: htmlForAdmin
     };

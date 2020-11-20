@@ -1,9 +1,6 @@
 exports = (module.exports = {});
-const Month = require('../../../../utils/getMonthNames.js');
-let newDate = new Date();
-let Day = newDate.getUTCDate();
-let Year = newDate.getUTCFullYear();
-let MonthOfNumber = newDate.getMonth();
+const moment = require('moment');
+let fecha = moment().locale('es-mx').format('LL');
 /**
  * 
  */
@@ -59,7 +56,7 @@ exports.header = ()=> `
                                     <div class="editable-text">
                                         <span class="text_container">
                                             <multiline>
-                                                ${Day} ${Month[MonthOfNumber]}, ${Year}
+                                                ${fecha}
                                             </multiline>
                                         </span>
                                     </div>
